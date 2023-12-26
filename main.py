@@ -26,7 +26,7 @@ def upload():
 
     image = cv2.imread(os.path.join(script_path, 'static/input.jpg'))
     height, width, _ = image.shape
-    blob = cv2.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
+    blob = cv2.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=True)
     net.setInput(blob)
     outs = net.forward(net.getUnconnectedOutLayersNames())
     class_ids = []
